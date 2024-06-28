@@ -11,6 +11,9 @@
 }
 
 body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100vw;
     height: 100vh;
     background-color: #000;
@@ -36,15 +39,16 @@ body{
     background-position: center center;
     background-size: cover;
     background-image: url(../img/forca.png);
-    width: 234px;
-    height: 272px;
+    margin-top: 10px;
+    width: 200px;
+    height: 200px;
     background-repeat: no-repeat;
     background-clip: border-box;
     overflow: hidden;
 }
 #imagem img {
-    width: 234px;
-    height: 272px;
+    width: 200px;
+    height: 200px;
 }
 #palavra-secreta{
     display: flex;
@@ -85,20 +89,20 @@ body{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
+    gap: 5px;
 }
 
 .teclas button {
     width: 24px;
     height: 24px;
-    margin-bottom: 5px;
+    margin-bottom: 0px;
     cursor: pointer;
     background-color: #000;
     border-radius: 0;
     border: 3px dotted #ffffff; 
     color: var(--p-color);
     font-family: "VT323", monospace;
-    font-size: 1.4em;
+    font-size: 1em;
     font-weight: 600;
     transition: all 0.1s ease-in-out;
     image-rendering: pixelated;
