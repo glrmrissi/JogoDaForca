@@ -1,0 +1,367 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500&display=swap');
+
+:root {
+    --p-color: #ff3939;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    background-image: url(../img/bgForca02.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: "VT323", monospace;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+#imagem{
+    display: flex;
+    background-position: center center;
+    background-size: cover;
+    background-image: url(../img/forca.png);
+    width: 234px;
+    height: 272px;
+    background-repeat: no-repeat;
+    background-clip: border-box;
+    overflow: hidden;
+}
+#imagem img {
+    width: 234px;
+    height: 272px;
+}
+#palavra-secreta{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 1em;
+    margin-top: 30px;
+}
+
+.letras{
+    width: 16px;
+    text-align: center;
+    border-bottom: 2px solid var(--p-color);
+    color: #ffffff;
+    padding: 2px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.letrasEspaco{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 16px;
+    text-align: center;
+    color: #ffffff;
+    padding: 2px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+#teclado{
+    margin-top: 30px;
+}
+
+.teclas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.teclas button {
+    width: 24px;
+    height: 24px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    background-color: #000;
+    border-radius: 0;
+    border: 3px dotted #ffffff; 
+    color: var(--p-color);
+    font-family: "VT323", monospace;
+    font-size: 1.4em;
+    font-weight: 600;
+    transition: all 0.1s ease-in-out;
+    image-rendering: pixelated;
+    position: relative;
+}
+
+.teclas button::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    background: linear-gradient(145deg, #ffffff, #c0c0c0);
+    z-index: -1;
+    border-radius: 5px;
+    transition: all 0.1s ease-in-out;
+}
+
+.teclas button:hover {
+    background-color: #444;
+    border-color: #ffcc00;
+}
+
+.teclas button:active {
+    background-color: #666;
+    border-color: #ffcc00;
+    transform: translateY(2px);
+    box-shadow: inset 0px 0px 5px #000000;
+}
+
+.teclas button:active::before {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 0;
+}
+
+.teclas button:disabled{
+    cursor: not-allowed;
+}
+
+
+
+#categoria{
+    margin-top: 30px;
+    color: var(--p-color);
+    font-size: 1.2em;
+}
+
+#abreModalAddPalavra, #recarregar, #jogarAutomatico, #jogarNovamente{
+    position: fixed;
+    width: 70px;
+    height: 70px;
+    border: none;
+    outline: none;
+    border-radius: 70px;
+    font-size: 3em;
+    background-color: transparent;
+    color: #000;
+    cursor: pointer;
+}
+
+#abreModalAddPalavra{
+    display: none;
+    color: var(--p-color);
+    bottom: 220px;
+    right: 5px;
+}
+
+#recarregar{
+    color: var(--p-color);
+    bottom: 150px;
+    right: 5px;
+}
+
+#jogarAutomatico {
+    color: var(--p-color);
+    bottom: 80px;
+    right: 5px;
+}
+
+#status{
+    position: fixed;
+    bottom: 15px;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+}
+
+#jogarNovamente{
+    image-rendering: pixelated;
+    display: none;
+    bottom: 80px;
+    right: 30px;
+    transform: rotate(-90deg);
+    transform-origin: left top 0;
+}
+
+.modal-container{
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    padding-top: 100px;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-add-palavra{
+    position: relative;
+    background-color: #ffffff;
+    border: 10px solid #000;
+    border-radius: 5px;
+    text-align: center;
+    margin: auto;
+    padding: 0;
+    width: 90%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animacao;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animacao;
+    animation-duration: 0.4s;
+}
+
+@-webkit-keyframes animacao{
+    from{top:-300px; opacity: 0;}
+    to{top:0; opacity: 1;}
+}
+
+@keyframes animacao{
+    from{top:-300px; opacity: 0;}
+    to{top:0; opacity: 1;}
+}
+
+.modal-header-add-palavra{
+    image-rendering: pixelated;
+    padding: 2px 16px;
+    bottom: 10px;
+    background-color: #ff3a3a;
+    font-size: 1.3em;
+    border-bottom: 3px solid #000;
+}
+
+.close{
+    color: #ffffff;
+    float: right;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.close:hover, .close:focus{
+    color: #ff0000;
+    text-decoration: none;
+}
+
+.modal-body-add-palavra{
+    display: flex;
+    background-color: #ffffff;
+    flex-direction: column;
+    padding: 2px 16px;
+}
+
+.modal-body-add-palavra input, .modal-body-add-palavra button{
+    text-align: center;
+    margin: 10px 0;
+    font-size: 1.5em;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #9c9c9c;
+}
+
+.modal-body-add-palavra input{
+    text-transform: uppercase;
+}
+
+.modal-body-add-palavra button{
+    background-color: #f35858;
+    cursor: pointer;
+}
+
+.modal-body-add-palavra button:hover{
+    background-color: #000;
+    color: #f35858;
+    cursor: pointer;
+}
+
+/*#region MEDIA QUERY*/
+@media (min-width: 321px){
+    .teclas button{
+        width: 25px;
+        height: 25px;
+    }
+    #categoria{
+        font-size: 1.3em;
+    }
+}
+
+@media (min-width: 376px){
+    .teclas button{
+        width: 30px;
+        height: 30px;
+    }
+    #palavra-secreta{
+        font-size: 1.3em;
+    }
+    .letras{
+        width: 18px;
+    }
+
+    #categoria{
+        font-size: 1.5em;
+    }
+}
+
+@media (min-width: 426px){
+    .teclas button{
+        width: 36px;
+        height: 36px;
+    }
+    #palavra-secreta{
+        font-size: 1.5em;
+    }
+    .letras{
+        width: 20px;
+    }
+
+    #categoria{
+        font-size: 1.6em;
+    }
+}
+
+@media (min-width: 769px){
+    .teclas button{
+        width: 68px;
+        height: 68px;
+        font-size: 2em;
+    }
+    #palavra-secreta{
+        font-size: 2.5em;
+    }
+    .letras{
+        width: 35px;
+    }
+
+    #categoria{
+        font-size: 2em;
+    }
+
+    .modal-add-palavra{
+        width: 80%;
+    }
+}
+
+@media (min-width: 1025px){
+    .modal-add-palavra{
+        width: 50%;
+    }
+}
+/*#endregion*/
+
+
