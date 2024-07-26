@@ -14,6 +14,7 @@ function criarPalavraSecreta() {
 
     palavraSecretaSorteada = palavras[indexPalavra].nome;
     palavraSecretaCategoria = palavras[indexPalavra].categoria;
+    palavraSecretaSignificado = palavras[indexPalavra].significado;
 
     // console.log(palavraSecretaSorteada);
 }
@@ -98,7 +99,7 @@ function comparalistas(letra) {
         let messageRandomFail = getRandomMessageFail()
 
         if (tentativas == 0) {
-            abreModal("Vixiii!", `${messageRandomFail} A palavra secreta era <br>` + palavraSecretaSorteada);
+            abreModal("Vixiii!", `${messageRandomFail} A palavra secreta era <br> ${palavraSecretaSorteada} e o significado era <br> ${palavraSecretaSignificado}`);
             piscarBotaoJogarNovamente(true);
         }
     }
@@ -136,7 +137,7 @@ function comparalistas(letra) {
 
     if (vitoria == true) {
         const randomMessage = getRandomMessage();
-        abreModal("PARABÉNS!", randomMessage);
+        abreModal(`Parabéns ${randomMessage} e o significado era <br> ${palavraSecretaSignificado}`);
         tentativas = 0;
         piscarBotaoJogarNovamente(true);
     }
@@ -247,203 +248,253 @@ function carregaListaAutomatica() {
     palavras = [
         palavra001 = {
             nome: "EXERCICIO",
-            categoria: "SAÚDE E BEM-ESTAR"
+            categoria: "SAÚDE E BEM-ESTAR",
+            significado: "Atividade física realizada para manter ou melhorar a saúde e a forma física."
         },
         palavra002 = {
             nome: "NUTRICAO",
-            categoria: "SAÚDE E BEM-ESTAR"
+            categoria: "SAÚDE E BEM-ESTAR",
+            significado: "A ciência que estuda os alimentos e sua relação com a saúde."
         },
         palavra003 = {
             nome: "MEDITACAO",
-            categoria: "SAÚDE E BEM-ESTAR"
+            categoria: "SAÚDE E BEM-ESTAR",
+            significado: "Prática que envolve técnicas de concentração e relaxamento para alcançar um estado de tranquilidade e clareza mental."
         },
         palavra004 = {
             nome: "SONO",
-            categoria: "SAÚDE E BEM-ESTAR"
+            categoria: "SAÚDE E BEM-ESTAR",
+            significado: "Estado natural de descanso do corpo e da mente."
         },
         palavra005 = {
             nome: "HIDRATACAO",
-            categoria: "SAÚDE E BEM-ESTAR"
+            categoria: "SAÚDE E BEM-ESTAR",
+            significado: "Processo de manter o corpo abastecido com água."
         },
         palavra006 = {
             nome: "FITNESS",
-            categoria: "SAÚDE E BEM-ESTAR"
+            categoria: "SAÚDE E BEM-ESTAR",
+            significado: "Condição de estar fisicamente saudável e em boa forma."
         },
         palavra007 = {
             nome: "VITAMINAS",
-            categoria: "SAÚDE E BEM-ESTAR"
+            categoria: "SAÚDE E BEM-ESTAR",
+            significado: "Nutrientes essenciais que o corpo necessita para funcionar corretamente."
         },
         palavra008 = {
             nome: "YOGA",
-            categoria: "SAÚDE E BEM-ESTAR"
+            categoria: "SAÚDE E BEM-ESTAR",
+            significado: "Prática física, mental e espiritual originária da Índia."
         },
         palavra009 = {
             nome: "FISIOTERAPIA",
-            categoria: "SAÚDE E BEM-ESTAR"
+            categoria: "SAÚDE E BEM-ESTAR",
+            significado: "Tratamento para restaurar o movimento e a função física."
         },
         palavra010 = {
             nome: "MASSAGEM",
-            categoria: "SAÚDE E BEM-ESTAR"
+            categoria: "SAÚDE E BEM-ESTAR",
+            significado: "Manipulação dos tecidos moles do corpo para relaxamento ou reabilitação."
         },
         palavra011 = {
             nome: "PILATES",
-            categoria: "SAÚDE E BEM-ESTAR"
+            categoria: "SAÚDE E BEM-ESTAR",
+            significado: "Método de exercício que se concentra no fortalecimento do corpo com ênfase nos músculos do core."
         },
         palavra012 = {
             nome: "DIETA",
-            categoria: "SAÚDE E BEM-ESTAR"
+            categoria: "SAÚDE E BEM-ESTAR",
+            significado: "Regime alimentar seguido para alcançar determinados objetivos de saúde."
         },
         palavra013 = {
             nome: "HIGIENE",
-            categoria: "SAÚDE E BEM-ESTAR"
+            categoria: "SAÚDE E BEM-ESTAR",
+            significado: "Práticas de limpeza e cuidado corporal para manter a saúde."
         },
         palavra014 = {
             nome: "TERAPIA",
-            categoria: "SAÚDE E BEM-ESTAR"
+            categoria: "SAÚDE E BEM-ESTAR",
+            significado: "Tratamento de condições físicas ou mentais por meio de técnicas específicas."
         },
         palavra015 = {
             nome: "CARDIO",
-            categoria: "SAÚDE E BEM-ESTAR"
+            categoria: "SAÚDE E BEM-ESTAR",
+            significado: "Exercícios que aumentam a frequência cardíaca para melhorar a saúde cardiovascular."
         },
         palavra016 = {
             nome: "MUSCULACAO",
-            categoria: "SAÚDE E BEM-ESTAR"
+            categoria: "SAÚDE E BEM-ESTAR",
+            significado: "Treinamento com pesos para aumentar a força e a massa muscular."
         },
         palavra017 = {
             nome: "RELAXAMENTO",
-            categoria: "SAÚDE E BEM-ESTAR"
+            categoria: "SAÚDE E BEM-ESTAR",
+            significado: "Processo de aliviar a tensão e reduzir o estresse."
         },
         palavra018 = {
             nome: "MEDITACAO",
-            categoria: "SAÚDE E BEM-ESTAR"
+            categoria: "SAÚDE E BEM-ESTAR",
+            significado: "Prática que envolve técnicas de concentração e relaxamento para alcançar um estado de tranquilidade e clareza mental."
         },
         palavra019 = {
             nome: "ESTRESSE",
-            categoria: "SAÚDE E BEM-ESTAR"
+            categoria: "SAÚDE E BEM-ESTAR",
+            significado: "Resposta do corpo a demandas ou ameaças, tanto físicas quanto emocionais."
         },
         palavra020 = {
             nome: "ANSIEDADE",
-            categoria: "SAÚDE E BEM-ESTAR"
+            categoria: "SAÚDE E BEM-ESTAR",
+            significado: "Sentimento de preocupação, nervosismo ou mal-estar sobre algo com um resultado incerto."
         },
         palavra021 = {
             nome: "DETOX",
-            categoria: "SAÚDE E BEM-ESTAR"
+            categoria: "SAÚDE E BEM-ESTAR",
+            significado: "Processo de eliminação de toxinas do corpo."
         },
         palavra022 = {
             nome: "IMUNIDADE",
-            categoria: "SAÚDE E BEM-ESTAR"
+            categoria: "SAÚDE E BEM-ESTAR",
+            significado: "Capacidade do corpo de resistir a infecções e doenças."
         },
         palavra023 = {
             nome: "ALONGAMENTO",
-            categoria: "SAÚDE E BEM-ESTAR"
+            categoria: "SAÚDE E BEM-ESTAR",
+            significado: "Exercícios que visam aumentar a flexibilidade dos músculos e articulações."
         },
         palavra024 = {
             nome: "CUIDADOS COM A PELE",
-            categoria: "SAÚDE E BEM-ESTAR"
+            categoria: "SAÚDE E BEM-ESTAR",
+            significado: "Práticas e produtos utilizados para manter a pele saudável e bonita."
         },
         palavra025 = {
             nome: "BEM-ESTAR MENTAL",
-            categoria: "SAÚDE E BEM-ESTAR"
+            categoria: "SAÚDE E BEM-ESTAR",
+            significado: "Estado de saúde mental em que uma pessoa é capaz de lidar com as tensões normais da vida."
         },
         palavra026 = {
             nome: "MINDFULNESS",
-            categoria: "SAÚDE E BEM-ESTAR"
+            categoria: "SAÚDE E BEM-ESTAR",
+            significado: "Prática de manter a atenção plena no momento presente."
         },
         palavra027 = {
             nome: "AUTOESTIMA",
-            categoria: "SAÚDE E BEM-ESTAR"
+            categoria: "SAÚDE E BEM-ESTAR",
+            significado: "Avaliação subjetiva que uma pessoa faz de si mesma."
         },
         palavra028 = {
             nome: "HABITOS SAUDAVEIS",
-            categoria: "SAÚDE E BEM-ESTAR"
+            categoria: "SAÚDE E BEM-ESTAR",
+            significado: "Rotinas que contribuem para uma vida saudável."
         },
         palavra029 = {
             nome: "PREVENCAO",
-            categoria: "SAÚDE E BEM-ESTAR"
+            categoria: "SAÚDE E BEM-ESTAR",
+            significado: "Ações tomadas para evitar doenças ou problemas de saúde."
         },
         palavra030 = {
             nome: "BALANCEAMENTO",
-            categoria: "SAÚDE E BEM-ESTAR"
+            categoria: "SAÚDE E BEM-ESTAR",
+            significado: "Ato de manter o equilíbrio em diversos aspectos da vida."
         },
         palavra031 = {
             nome: "BEM-ESTAR SOCIAL",
-            categoria: "SAÚDE E BEM-ESTAR"
+            categoria: "SAÚDE E BEM-ESTAR",
+            significado: "Estado de saúde social em que uma pessoa tem boas relações e uma rede de suporte."
         },
         palavra032 = {
             nome: "ATIVIDADE FISICA",
-            categoria: "SAÚDE E BEM-ESTAR"
+            categoria: "SAÚDE E BEM-ESTAR",
+            significado: "Qualquer movimento corporal produzido pelos músculos esqueléticos que requer gasto de energia."
         },
         palavra033 = {
             nome: "CONSULTA MEDICA",
-            categoria: "SAÚDE E BEM-ESTAR"
+            categoria: "SAÚDE E BEM-ESTAR",
+            significado: "Encontro com um profissional de saúde para avaliação e orientação médica."
         },
         palavra034 = {
             nome: "EXAMES REGULARES",
-            categoria: "SAÚDE E BEM-ESTAR"
+            categoria: "SAÚDE E BEM-ESTAR",
+            significado: "Testes realizados periodicamente para monitorar a saúde."
         },
         palavra035 = {
             nome: "SAUDE OCULAR",
-            categoria: "SAÚDE E BEM-ESTAR"
+            categoria: "SAÚDE E BEM-ESTAR",
+            significado: "Condição de ter olhos saudáveis e visão clara."
         },
         palavra036 = {
             nome: "VACINACAO",
-            categoria: "SAÚDE E BEM-ESTAR"
+            categoria: "SAÚDE E BEM-ESTAR",
+            significado: "Administração de vacinas para prevenir doenças infecciosas."
         },
         palavra037 = {
             nome: "SAUDE DENTAL",
-            categoria: "SAÚDE E BEM-ESTAR"
+            categoria: "SAÚDE E BEM-ESTAR",
+            significado: "Manutenção da saúde dos dentes e gengivas."
         },
         palavra038 = {
             nome: "POSTURA",
-            categoria: "SAÚDE E BEM-ESTAR"
+            categoria: "SAÚDE E BEM-ESTAR",
+            significado: "Posição correta do corpo ao ficar em pé, sentado ou deitado."
         },
         palavra039 = {
             nome: "ACUPUNTURA",
-            categoria: "SAÚDE E BEM-ESTAR"
+            categoria: "SAÚDE E BEM-ESTAR",
+            significado: "Terapia tradicional chinesa que utiliza agulhas finas inseridas em pontos específicos do corpo."
         },
         palavra040 = {
             nome: "HARMONIA",
-            categoria: "SAÚDE E BEM-ESTAR"
+            categoria: "SAÚDE E BEM-ESTAR",
+            significado: "Estado de paz e equilíbrio entre os diferentes aspectos da vida."
         },
         palavra041 = {
             nome: "AROMATERAPIA",
-            categoria: "SAÚDE E BEM-ESTAR"
+            categoria: "SAÚDE E BEM-ESTAR",
+            significado: "Uso de óleos essenciais para promover o bem-estar físico e emocional."
         },
         palavra042 = {
             nome: "FITOTERAPIA",
-            categoria: "SAÚDE E BEM-ESTAR"
+            categoria: "SAÚDE E BEM-ESTAR",
+            significado: "Uso de plantas e ervas medicinais para tratar doenças."
         },
         palavra043 = {
             nome: "SAUNA",
-            categoria: "SAÚDE E BEM-ESTAR"
+            categoria: "SAÚDE E BEM-ESTAR",
+            significado: "Banho de vapor ou calor seco para relaxamento e desintoxicação."
         },
         palavra044 = {
             nome: "BANHO DE ERVAS",
-            categoria: "SAÚDE E BEM-ESTAR"
+            categoria: "SAÚDE E BEM-ESTAR",
+            significado: "Imersão em água infundida com ervas para promover a saúde e o bem-estar."
         },
         palavra045 = {
             nome: "TERAPIA HOLISTICA",
-            categoria: "SAÚDE E BEM-ESTAR"
+            categoria: "SAÚDE E BEM-ESTAR",
+            significado: "Abordagem terapêutica que trata o indivíduo como um todo, incluindo aspectos físicos, mentais e espirituais."
         },
         palavra046 = {
             nome: "CROMOTERAPIA",
-            categoria: "SAÚDE E BEM-ESTAR"
+            categoria: "SAÚDE E BEM-ESTAR",
+            significado: "Uso de cores para equilibrar a energia do corpo e promover a saúde."
         },
         palavra047 = {
             nome: "MEDITACAO GUIADA",
-            categoria: "SAÚDE E BEM-ESTAR"
+            categoria: "SAÚDE E BEM-ESTAR",
+            significado: "Prática de meditação orientada por um instrutor ou gravação de áudio."
         },
         palavra048 = {
             nome: "AUTOCUIDADO",
-            categoria: "SAÚDE E BEM-ESTAR"
+            categoria: "SAÚDE E BEM-ESTAR",
+            significado: "Práticas que uma pessoa adota para manter sua saúde e bem-estar."
         },
         palavra049 = {
             nome: "REIKI",
-            categoria: "SAÚDE E BEM-ESTAR"
+            categoria: "SAÚDE E BEM-ESTAR",
+            significado: "Terapia energética japonesa que promove a cura através da imposição das mãos."
         },
         palavra050 = {
             nome: "RESPIRACAO",
-            categoria: "SAÚDE E BEM-ESTAR"
+            categoria: "SAÚDE E BEM-ESTAR",
+            significado: "Ato de inalar e exalar ar, essencial para a vida e saúde."
         }
     ];
 }
@@ -459,7 +510,8 @@ function adicionarPalavra() {
 
     let palavra = {
         nome: addPalavra,
-        categoria: addCategoria
+        categoria: addCategoria,
+        significado: addSignificado
     }
 
     palavras.push(palavra);
@@ -467,6 +519,7 @@ function adicionarPalavra() {
 
     document.getElementById("addPalavra").value = "";
     document.getElementById("addCategoria").value = "";
+    document.getElementById("addSignificado").value = "";
 }
 
 function isNullOrWhiteSpace(input) {
@@ -509,7 +562,7 @@ const teclas = document.querySelectorAll('.teclas button');
 
 for (let i = 0; i < teclas.length; i++) {
     // Este for está percorrendo todas as teclas dentro da div teclas 👓
-    teclas[i].addEventListener('click', function() {
+    teclas[i].addEventListener('click', function () {
         verificaTeclaEscolhida(teclas[i].textContent);
     });
 }
