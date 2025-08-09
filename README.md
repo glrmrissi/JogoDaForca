@@ -20,18 +20,6 @@ Technologies Used
 
     JavaScript: Game logic and user interaction.
 
-Project Structure
-
-JogoDaForca/
-├── css/
-│   └── estilo.css        # Custom styles for the game
-├── img/
-│   └── forca.png         # Game images
-├── js/
-│   └── script.js         # Main game logic
-├── index.html            # Main game file
-└── README.md             # Project documentation
-
 How to Run
 
     Clone the Repository:
